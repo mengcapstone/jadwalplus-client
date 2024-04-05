@@ -28,7 +28,7 @@ const AddSchedulePage = () => {
   };
 
   const minToday = () => {
-    return new Date().toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' }).split(',')[0].split('/').reverse().join('-');
+    return new Date().toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' }).split(',')[0].split('/').reverse().map((item, index) => (index === 0 ? item : `${item.length !== 2 ? (`0${item}`) : item}`)).join('-');
   };
 
   return (
